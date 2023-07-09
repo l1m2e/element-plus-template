@@ -1,0 +1,9 @@
+/* 红色主题 */
+html[theme="red"] {
+  --el-color-primary:red
+}
+
+/* 黄色主题 */
+html[theme="yellow"]{
+  --el-color-primary:yellow
+}

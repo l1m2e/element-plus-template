@@ -1,0 +1,16 @@
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* 黑暗模式默认颜色 */
+html.dark {
+  background: #121212;
+}
+/* 路由加载进度条颜色 */
+#nprogress .bar {
+	background: #6777ef !important;
+}
