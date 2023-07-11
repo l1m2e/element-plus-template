@@ -6,6 +6,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 import UnoCSS from 'unocss/vite'
 import VueMacros from 'unplugin-vue-macros/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import Inspector from 'vite-plugin-vue-inspector'
 
 export default defineConfig({
   resolve: {
@@ -34,11 +35,13 @@ export default defineConfig({
         'vue',
         'vue-router',
         '@vueuse/core',
+        'pinia',
         { '~/api': [['*', 'api']] },
       ],
       dirs: [
         './src/composables',
         './src/service',
+        './src/store',
       ],
       vueTemplate: true,
       dts: './src/types/auto-import.d.ts',
@@ -53,6 +56,8 @@ export default defineConfig({
 
     // https://github.com/antfu/unocss
     UnoCSS(),
+    // ctrl + shift 启动点击跳转到编辑器模式 https://github.com/webfansplz/vite-plugin-vue-inspector
+    Inspector(),
   ],
 
   css: {
