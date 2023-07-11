@@ -62,5 +62,9 @@ export default defineConfig({
       },
     },
   },
-  base: './',
+  base: '/element-plus-template',
+
+  build: {
+    outDir: 'docs',
+  },
 })
