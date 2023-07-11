@@ -33,6 +33,6 @@ export default defineConfig({
     }),
   ],
   transformers: [
-    transformerVariantGroup() as any,
+    transformerVariantGroup(),
   ],
 })
