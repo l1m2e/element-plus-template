@@ -26,7 +26,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory('/element-plus-template/'),
+  history: createWebHistory('/element-plus-template'),
   routes,
 })
 
