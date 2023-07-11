@@ -25,5 +25,5 @@
     }
   },
   "include": ["./src", "global.d.ts", "./src/types/*.d.ts"],
-  "exclude": ["dist", "node_modules"]
+  "exclude": ["docs", "node_modules"]
 }
