@@ -4,6 +4,7 @@
     "@unocss"
   ],
   "rules":{
-    "no-console": "warn"
+    "no-console": "warn",
+    "camelcase": "error"
   }
 }
