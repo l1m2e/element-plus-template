@@ -1,0 +1,1 @@
+import"./base-a967d544.js";import{E as t}from"./card-88c0cfb2.js";import{f as o,k as a,l as n,j as s,n as r}from"./index-397287bc.js";const _=r("h1",null,"测试2",-1),i=o({name:"Test2",__name:"test2",setup(c){return(l,m)=>{const e=t;return s(),a(e,null,{default:n(()=>[_]),_:1})}}});export{i as default};

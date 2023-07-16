@@ -11,8 +11,10 @@
     "postinstall": "npx simple-git-hooks"
   },
   "dependencies": {
+    "@element-plus/icons-vue": "^2.1.0",
     "@iconify-json/ri": "^1.1.10",
     "@types/nprogress": "^0.2.0",
+    "@vitejs/plugin-vue-jsx": "^3.0.1",
     "@vueuse/core": "^10.2.1",
     "axios": "^1.4.0",
     "element-plus": "^2.3.7",
@@ -28,6 +30,7 @@
     "@types/node": "^20.4.1",
     "@unocss/eslint-config": "^0.53.5",
     "@unocss/reset": "^0.53.5",
+    "@unocss/transformer-directives": "^0.53.5",
     "@unocss/transformer-variant-group": "^0.53.5",
     "@vitejs/plugin-vue": "^4.2.3",
     "@vue-macros/volar": "^0.12.1",

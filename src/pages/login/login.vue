@@ -2,6 +2,7 @@
 const router = useRouter()
 
 function login() {
+  ElMessage.success('登陆成功')
   router.push('/index')
   api.login({ password: '123', username: '12' })
 }

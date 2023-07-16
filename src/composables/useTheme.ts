@@ -1,3 +1,4 @@
+/** 主题列表 需要手动维护 */
 const themes = [
   { name: '默认主题', value: 'default' },
   { name: '红色主题', value: 'red' },
@@ -5,32 +6,36 @@ const themes = [
 ] as const
 
 type Themes = typeof themes[number]['value']
+interface UseThemeRes {
+  /** 主题列表 */
+  themes: typeof themes
+  /** 当前主题 */
+  currentTheme: Ref<Themes>
+}
 
 /**
  * 使用主题
- * @param theme 切换的主题名称
- * @returns 返回主题名称列表 和 当前主题
+ * @param theme 切换的主题名称 传递后会立即切换主题
+ * @returns 返回主题`名称列表`和`当前主题`
  */
-export function useTheme(theme?: Themes | string) {
-  theme && setTheme(theme)
+export function useTheme(theme?: Themes): UseThemeRes {
+  theme && useToggleTheme(theme)
 
-  const currentTheme = ref<Themes | string>(document.documentElement.getAttribute('theme') || 'default')
+  const currentTheme = ref<Themes>((document.documentElement.getAttribute('theme')) as Themes || 'default')
 
-  watch(currentTheme, val => setTheme(val))
+  watch(currentTheme, val => useToggleTheme(val))
 
   return {
-    /** 主题列表 */
     themes,
-    /** 当前主题 */
     currentTheme,
   }
 }
 
 /**
- * 设置主题
- * @param theme 主题名称
+ * 切换主题
+ * @param theme 切换的主题名称 传递后会立即切换主题
  */
-function setTheme(theme: string) {
+export function useToggleTheme(theme: Themes) {
   localStorage.setItem('theme', theme)
   document.documentElement.setAttribute('theme', theme)
 }

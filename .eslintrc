@@ -5,6 +5,7 @@
   ],
   "rules":{
     "no-console": "warn",
-    "camelcase": "error"
+    "camelcase": "error",
+    "vue/singleline-html-element-content-newline": "off"
   }
 }

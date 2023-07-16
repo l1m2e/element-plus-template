@@ -7,6 +7,7 @@ import UnoCSS from 'unocss/vite'
 import VueMacros from 'unplugin-vue-macros/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import Inspector from 'vite-plugin-vue-inspector'
+import vueJsx from '@vitejs/plugin-vue-jsx'
 
 export default defineConfig({
   resolve: {
@@ -27,6 +28,7 @@ export default defineConfig({
         }),
       },
     }),
+    vueJsx(),
 
     // 函数自动引入 https://github.com/antfu/unplugin-auto-import
     AutoImport({
@@ -41,7 +43,7 @@ export default defineConfig({
       dirs: [
         './src/composables',
         './src/service',
-        './src/store',
+        './src/store/**',
       ],
       vueTemplate: true,
       dts: './src/types/auto-import.d.ts',
@@ -50,6 +52,8 @@ export default defineConfig({
     // 组件自动引入 https://github.com/antfu/vite-plugin-components
     Components({
       resolvers: [ElementPlusResolver({ importStyle: 'sass' })],
+      extensions: ['vue', 'jsx', 'tsx'],
+      include: [/\.vue$/, /\.vue\?vue/, /\.jsx$/, /\.tsx$/],
       dirs: ['./src/components/**'],
       dts: './src/types/components.d.ts',
     }),
@@ -67,6 +71,7 @@ export default defineConfig({
       },
     },
   },
+
   base: '/element-plus-template',
 
   build: {

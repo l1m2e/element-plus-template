@@ -13,8 +13,18 @@ const routes = [
     children: [
       {
         path: 'index',
-        name: 'index',
+        name: 'Index',
         component: () => import('~/pages/index/index.vue'),
+      },
+      {
+        path: 'test1',
+        name: 'Test1',
+        component: () => import('~/pages/test1/test1.vue'),
+      },
+      {
+        path: 'test2',
+        name: 'Test2',
+        component: () => import('~/pages/test2/test2.vue'),
       },
     ],
   },
