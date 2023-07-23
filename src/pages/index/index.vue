@@ -4,7 +4,12 @@ defineOptions({
 })
 const { themes, currentTheme } = useTheme() // 切换主题 只需要一行代码
 const { sidebarWidth, isCollapse } = storeToRefs(useAppStore())
-</script>
+function fn() {
+  if (sidebarWidth)
+    return 1
+}
+fn()
+</script>\if-newline
 
 <template>
   <el-card class="m-auto mt-100px w-500px">

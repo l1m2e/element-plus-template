@@ -31,6 +31,48 @@ const menuList = [
         label: '测试2',
         icon: 'Menu',
       },
+      {
+        path: '/test2',
+        name: 'Test3',
+        label: '测试3',
+        icon: 'Menu',
+      },
+      {
+        path: '/test2',
+        name: 'Test4',
+        label: '测试4',
+        icon: 'Menu',
+      },
+      {
+        path: '/test2',
+        name: 'Test5',
+        label: '测试5',
+        icon: 'Menu',
+      },
+      {
+        path: '/test2',
+        name: 'Test6',
+        label: '测试6',
+        icon: 'Menu',
+      },
+      {
+        path: '/test2',
+        name: 'Test7',
+        label: '测试7',
+        icon: 'Menu',
+      },
+      {
+        path: '/test2',
+        name: 'Test8',
+        label: '测试8',
+        icon: 'Menu',
+      },
+      {
+        path: '/test2',
+        name: 'Test9',
+        label: '测试9',
+        icon: 'Menu',
+      },
     ],
   },
 ]
@@ -42,9 +84,9 @@ const { tagsList, pageCaches } = storeToRefs(useTagsNavStroe())
 function selectMenu(val: TagsNav) {
   const tag = tagsList.value.find(item => item.name === val.name)
 
-  // 不存在tag 则添加
+  // 不存在该标签 则添加
   !tag && tagsList.value.push(val)
-
+  // 跳转至点击的路由
   router.push(val.path)
 }
 </script>
