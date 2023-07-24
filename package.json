@@ -20,6 +20,7 @@
     "element-plus": "^2.3.7",
     "nprogress": "^0.2.0",
     "pinia": "^2.1.4",
+    "pinia-plugin-persistedstate": "^3.2.0",
     "sass": "^1.63.6",
     "unocss-preset-extra": "^0.5.2",
     "vue": "^3.3.4",

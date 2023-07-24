@@ -10,7 +10,6 @@ export const useTagsNavStroe = defineStore('tags-nav', () => {
       icon: 'House',
     },
   ])
-
   const pageCaches = computed(() => tagsList.value.map(item => item.name))
   return {
     /** 标签列表 */
@@ -20,4 +19,7 @@ export const useTagsNavStroe = defineStore('tags-nav', () => {
     /** 当前选中的标签 */
     checkedTag,
   }
+},
+{
+  persist: true,
 })

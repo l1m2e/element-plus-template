@@ -1,6 +1,10 @@
 <script lang="ts" setup>
 import type { TabPaneName, TabsPaneContext } from 'element-plus'
 
+onMounted(() => {
+  closeOther()
+})
+
 const { tagsList, checkedTag } = storeToRefs(useTagsNavStroe())
 const router = useRouter()
 
@@ -51,23 +55,29 @@ const dropdownList = reactive([
 ])
 
 function refresh() {
-  console.log('refresh')
+  location.reload()
 }
 
 function closeOther() {
-  console.log('closeOther')
+  tagsList.value = tagsList.value.filter(item => item.name === 'Index' || item.name === checkedTag.value)
 }
 
 function closeLeft() {
-  console.log('closeLeft')
+  const index = tagsList.value.findIndex(item => item.name === checkedTag.value)
+  if (index > -1) {
+    tagsList.value = tagsList.value.filter((v, i) => {
+      return v.name === tagsList.value[index].name || i > index || v.name === 'Index'
+    })
+  }
 }
 
 function closeRight() {
-  console.log('closeRight')
+  const index = tagsList.value.findIndex(item => item.name === checkedTag.value)
+  tagsList.value = tagsList.value.splice(0, index + 1)
 }
 
 function closeAll() {
-  console.log('closeAll')
+  tagsList.value = tagsList.value.filter(item => item.name === 'Index')
 }
 </script>
 
