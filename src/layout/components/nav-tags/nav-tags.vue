@@ -78,6 +78,10 @@ function closeRight() {
 
 function closeAll() {
   tagsList.value = tagsList.value.filter(item => item.name === 'Index')
+  const item = tagsList.value.find(item => item.name === 'Index')
+  item?.path && router.push(item.path)
+  if (item?.name)
+    checkedTag.value = item.name
 }
 </script>
 
