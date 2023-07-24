@@ -9,7 +9,7 @@ function fn() {
     return 1
 }
 fn()
-</script>\if-newline
+</script>
 
 <template>
   <el-card class="m-auto mt-100px w-500px">
