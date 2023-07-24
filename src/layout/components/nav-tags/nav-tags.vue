@@ -1,11 +1,8 @@
 <script lang="ts" setup>
 import type { TabPaneName, TabsPaneContext } from 'element-plus'
 
-const { tagsList } = storeToRefs(useTagsNavStroe())
-const route = useRoute()
+const { tagsList, checkedTag } = storeToRefs(useTagsNavStroe())
 const router = useRouter()
-// 默认选中的标签
-const checkedTag = ref(route.name as string)
 
 // 点击tag跳转路由
 function selectTag(val: TabsPaneContext) {

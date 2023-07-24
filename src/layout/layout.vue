@@ -78,7 +78,7 @@ const menuList = [
 ]
 
 const router = useRouter()
-const { tagsList, pageCaches } = storeToRefs(useTagsNavStroe())
+const { tagsList, pageCaches, checkedTag } = storeToRefs(useTagsNavStroe())
 
 // 选中菜单
 function selectMenu(val: TagsNav) {
@@ -88,6 +88,7 @@ function selectMenu(val: TagsNav) {
   !tag && tagsList.value.push(val)
   // 跳转至点击的路由
   router.push(val.path)
+  checkedTag.value = val.name
 }
 </script>
 
