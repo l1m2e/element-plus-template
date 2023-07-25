@@ -1,11 +1,14 @@
 {
   "recommendations": [
-    "antfu.vite",
     "antfu.iconify",
     "antfu.unocss",
     "antfu.goto-alias",
     "vue.volar",
     "dbaeumer.vscode-eslint",
-    "EditorConfig.EditorConfig"
+    "EditorConfig.EditorConfig",
+    "usernamehw.errorlens",
+    "gruntfuggly.todo-tree",
+    "vue.vscode-typescript-vue-plugin",
+    "eamodio.gitlens"
   ]
 }
