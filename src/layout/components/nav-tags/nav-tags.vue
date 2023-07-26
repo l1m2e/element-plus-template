@@ -19,9 +19,14 @@ function removeTag(val: TabPaneName) {
   const index = tagsList.value.findIndex(item => item.name === val)
   const isLast = index === tagsList.value.length - 1
 
-  isLast
-    ? router.push(tagsList.value[index - 1].path)
-    : router.push(tagsList.value[index + 1].path)
+  if (isLast) {
+    checkedTag.value = tagsList.value[index - 1].name
+    checkedTag.value = tagsList.value[index - 1].name
+  }
+  else {
+    checkedTag.value = tagsList.value[index + 1].name
+    checkedTag.value = tagsList.value[index + 1].name
+  }
 
   tagsList.value.splice(index, 1)
 }
