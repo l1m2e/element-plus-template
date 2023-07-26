@@ -24,8 +24,8 @@ function removeTag(val: TabPaneName) {
     checkedTag.value = tagsList.value[index - 1].name
   }
   else {
-    checkedTag.value = tagsList.value[index + 1].name
     router.push(tagsList.value[index + 1].path)
+    checkedTag.value = tagsList.value[index + 1].name
   }
 
   tagsList.value.splice(index, 1)
